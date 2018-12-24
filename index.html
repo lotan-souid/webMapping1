@@ -35,9 +35,7 @@
         // addin the basemap
         OpenMapSurfer_Grayscale.addTo(myMap);
 
-        $.getJSON("http://132.72.155.230:3838/js/examples/data/towns.geojson", function(data) {
-            L.geoJSON(data).addTo(myMap);
-        });
+       
         
         // color-selection function getColor
         var colors = ['#eff3ff','#bdd7e7','#6baed6','#3182bd','#08519c'];
@@ -51,9 +49,9 @@
                 return colors[0];
         }
 
-        function getColor(b){
+        function getColor(d){
            for (var i=0; i<breaks.length; i++){
-                if(b >= breaks[i] && d < breaks[i+1]) {
+                if(d >= breaks[i] && d < breaks[i+1]) {
                 return colors[i];
            }
         }
